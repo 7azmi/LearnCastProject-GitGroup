@@ -4,8 +4,12 @@
     <title>Profile</title>
 </head>
 <body>
-<h1>Welcome, ${client.name}!</h1>
-<p>Email: ${client.email}</p>
-<p>BMI: ${client.bmi}</p>
+<h1>Client Profile</h1>
+<form action="/client/updateProfile" method="post">
+    <p>Name: <input type="text" name="name" value="${client.name}" /></p>
+    <p>Email: <input type="email" name="email" value="${client.email}" readonly /></p>
+    <p>BMI: <input type="text" name="bmi" value="${client.bmi}" readonly /></p>
+    <button type="submit">Update Profile</button>
+</form>
 </body>
 </html>

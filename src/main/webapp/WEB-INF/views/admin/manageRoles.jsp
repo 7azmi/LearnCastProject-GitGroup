@@ -1,31 +1,33 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Manage Roles</title>
 </head>
 <body>
-<h1>Manage Roles</h1>
-<form action="/admin/manageRoles" method="post">
-    <table border="1">
+<h1>Manage Client Roles</h1>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Action</th>
+    </tr>
+    <c:forEach items="${clients}" var="client">
         <tr>
-            <th>Client Name</th>
-            <th>Role</th>
-        </tr>
-        <c:forEach var="client" items="${clients}">
-            <tr>
-                <td>${client.name}</td>
-                <td>
+            <td>${client.clientName}</td>
+            <td>${client.clientEmail}</td>
+            <td>
+                <form action="/admin/assignRole" method="post">
+                    <input type="hidden" name="email" value="${client.clientEmail}" />
                     <select name="role">
-                        <c:forEach var="role" items="${roles}">
-                            <option value="${role}">${role}</option>
-                        </c:forEach>
+                        <option value="USER" ${client.role == 'USER' ? 'selected' : ''}>User</option>
+                        <option value="ADMIN" ${client.role == 'ADMIN' ? 'selected' : ''}>Admin</option>
                     </select>
-                </td>
-            </tr>
-        </c:forEach>
-    </table>
-    <button type="submit">Save Changes</button>
-</form>
+                    <button type="submit">Update Role</button>
+                </form>
+            </td>
+        </tr>
+    </c:forEach>
+</table>
 </body>
 </html>
