@@ -1,14 +1,21 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Profile</title>
+    <title>Client Profile</title>
 </head>
 <body>
-<h1>Client Profile</h1>
-<form action="/client/updateProfile" method="post">
-    <p>Name: <input type="text" name="name" value="${client.name}" /></p>
-    <p>Email: <input type="email" name="email" value="${client.email}" readonly /></p>
-    <p>BMI: <input type="text" name="bmi" value="${client.bmi}" readonly /></p>
+<h2>Your Profile</h2>
+<form action="/updateProfile" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="${client.name}" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value="${client.email}" readonly><br>
+
+    <label for="bmi">BMI:</label>
+    <input type="text" id="bmi" name="bmi" value="${client.bmi}" readonly><br>
+
     <button type="submit">Update Profile</button>
 </form>
 </body>

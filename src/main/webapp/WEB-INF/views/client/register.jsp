@@ -1,16 +1,26 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Register</title>
+    <title>Client Registration</title>
 </head>
 <body>
-<h1>Client Registration</h1>
-<form action="/client/register" method="post">
-    <p>Name: <input type="text" name="name" required /></p>
-    <p>Email: <input type="email" name="email" required /></p>
-    <p>Password: <input type="password" name="password" required /></p>
+<h2>Register</h2>
+<form action="/register" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+
     <button type="submit">Register</button>
-    <p style="color: red;">${errorMessage}</p>
 </form>
+
+<c:if test="${not empty error}">
+    <p style="color:red">${error}</p>
+</c:if>
 </body>
 </html>

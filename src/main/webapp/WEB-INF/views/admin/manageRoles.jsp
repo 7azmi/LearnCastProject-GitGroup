@@ -1,33 +1,32 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Manage Roles</title>
+    <title>Manage Client Roles</title>
 </head>
 <body>
-<h1>Manage Client Roles</h1>
+<h2>Manage Roles</h2>
 <table border="1">
+    <thead>
     <tr>
         <th>Name</th>
         <th>Email</th>
         <th>Role</th>
-        <th>Action</th>
+        <th>Actions</th>
     </tr>
-    <c:forEach items="${clients}" var="client">
+    </thead>
+    <tbody>
+    <c:forEach var="client" items="${adminViewModel.clients}">
         <tr>
-            <td>${client.clientName}</td>
-            <td>${client.clientEmail}</td>
+            <td>${client.name}</td>
+            <td>${client.email}</td>
+            <td>${client.role}</td>
             <td>
-                <form action="/admin/assignRole" method="post">
-                    <input type="hidden" name="email" value="${client.clientEmail}" />
-                    <select name="role">
-                        <option value="USER" ${client.role == 'USER' ? 'selected' : ''}>User</option>
-                        <option value="ADMIN" ${client.role == 'ADMIN' ? 'selected' : ''}>Admin</option>
-                    </select>
-                    <button type="submit">Update Role</button>
-                </form>
+                <button>Assign Role</button>
             </td>
         </tr>
     </c:forEach>
+    </tbody>
 </table>
 </body>
 </html>

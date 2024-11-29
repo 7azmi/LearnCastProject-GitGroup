@@ -3,17 +3,8 @@ package org.example.models;
 public class Client {
     private String name;
     private String email;
+    private String password;
     private double bmi;
-
-    public Client() {
-        // Default constructor
-    }
-
-    public Client(String name, String email, double bmi) {
-        this.name = name;
-        this.email = email;
-        this.bmi = bmi;
-    }
 
     // Getters and Setters
     public String getName() {
@@ -30,6 +21,14 @@ public class Client {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public double getBmi() {

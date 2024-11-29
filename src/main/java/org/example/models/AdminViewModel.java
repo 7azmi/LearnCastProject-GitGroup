@@ -1,74 +1,31 @@
 package org.example.models;
 
+import java.util.List;
+
 public class AdminViewModel {
+    private List<ClientViewModel> clients; // For manageRoles.jsp
+    private List<FitnessProgram> programs; // For program management views
 
-    private String name;
-    private String description;
-    private int duration;
-    private String clientName;
-    private String clientEmail;
-    private String role;
-
-    // Constructor for Fitness Program
-    public AdminViewModel(String name, String description, int duration) {
-        this.name = name;
-        this.description = description;
-        this.duration = duration;
-    }
-
-    // Constructor for Client Role Management
-    public AdminViewModel(String clientName, String clientEmail, String role) {
-        this.clientName = clientName;
-        this.clientEmail = clientEmail;
-        this.role = role;
+    // Constructor
+    public AdminViewModel(List<ClientViewModel> clients, List<FitnessProgram> programs) {
+        this.clients = clients;
+        this.programs = programs;
     }
 
     // Getters and Setters
-    public String getName() {
-        return name;
+    public List<ClientViewModel> getClients() {
+        return clients;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setClients(List<ClientViewModel> clients) {
+        this.clients = clients;
     }
 
-    public String getDescription() {
-        return description;
+    public List<FitnessProgram> getPrograms() {
+        return programs;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
-    public String getClientName() {
-        return clientName;
-    }
-
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
-    }
-
-    public String getClientEmail() {
-        return clientEmail;
-    }
-
-    public void setClientEmail(String clientEmail) {
-        this.clientEmail = clientEmail;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
+    public void setPrograms(List<FitnessProgram> programs) {
+        this.programs = programs;
     }
 }
