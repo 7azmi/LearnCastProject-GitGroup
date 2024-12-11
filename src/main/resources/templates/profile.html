@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TVPSS - School Representative Profile</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="library.html">Library</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main class="container">
+    <h1>School Representative Profile</h1>
+    <div class="card">
+        <h2 class="card-title">Profile Information</h2>
+        <p class="card-description">Update your school and personal information</p>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="school-name">School Name</label>
+                <input type="text" id="school-name" name="school-name" value="Example High School" required>
+            </div>
+            <div class="form-group">
+                <label for="representative-name">Representative Name</label>
+                <input type="text" id="representative-name" name="representative-name" value="John Doe" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="john.doe@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="equipment">Equipment List</label>
+                <textarea id="equipment" name="equipment" required>Camera, Microphone, Tripod</textarea>
+            </div>
+            <button type="submit">Update Profile</button>
+        </form>
+    </div>
+</main>
+</body>
+</html>
+
